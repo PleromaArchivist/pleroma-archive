@@ -1,239 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pleroma Archive | A Living Library of Gnosis</title>
+    <title>The Pleroma Archive | Neutral Repository of Gnosis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
     <style>
-        /* --- DESIGN SYSTEM: "The Academic Archivist" --- */
-        :root {
-            --bg-color: #f9f7f1;      /* Off-white "Paper" */
-            --text-color: #333333;    /* Soft Black */
-            --accent-color: #8a2be2;  /* Royal Purple (Gnostic/Bishop vibe) */
-            --border-color: #dcdcdc;  /* Light Grey for separation */
-            --font-serif: 'Georgia', 'Times New Roman', serif;
-            --font-sans: 'Helvetica Neue', 'Arial', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-serif);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* --- HEADER & NAV --- */
-        header {
-            text-align: center;
-            padding: 4rem 1rem 2rem 1rem;
-            border-bottom: 4px double var(--text-color);
-            background-color: #fff;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: normal;
-        }
-
-        .subtitle {
-            font-family: var(--font-sans);
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-        }
-
-        nav {
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            margin: 0 1.5rem;
-            font-family: var(--font-sans);
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- MAIN CONTENT --- */
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
-        section {
-            margin-bottom: 4rem;
-        }
-
-        h2 {
-            font-family: var(--font-sans);
-            font-size: 1.5rem;
-            border-left: 5px solid var(--accent-color);
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-color);
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* --- THE "GOSPEL" ENTRIES --- */
-        .entry {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .entry h3 {
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-
-        .entry-meta {
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            color: #777;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        /* --- CALL TO ACTION --- */
-        .cta-box {
-            background-color: var(--text-color);
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-            border-radius: 2px;
-        }
-
-        .cta-box h2 {
-            border: none;
-            color: #fff;
-            padding: 0;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.8rem 2rem;
-            background-color: var(--accent-color);
-            color: #fff;
-            text-decoration: none;
-            font-family: var(--font-sans);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .button:hover {
-            background-color: #6a1b9a;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            background-color: #fff;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        .creds {
-            font-family: var(--font-sans);
-            font-size: 0.75rem;
-            margin-top: 0.5rem;
-        }
+        body { background-color: #fdfcf0; color: #1a1a1a; font-family: serif; }
+        header { text-align: center; border-bottom: 3px double #1a1a1a; padding-bottom: 20px; }
+        .seal { max-width: 250px; height: auto; display: block; margin: 0 auto 20px; }
+        .archival-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .archival-table th, .archival-table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        .archival-table th { background-color: #f4f1ea; }
+        .curator-title { font-variant: small-caps; letter-spacing: 1px; }
+        footer { margin-top: 50px; font-size: 0.9em; border-top: 1px solid #ccc; padding-top: 20px; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>The Pleroma Archive</h1>
-        <div class="subtitle">A Living Library of the Gnostic Tradition</div>
+        <img src="abraxas_seal.png" alt="Seal of The Pleroma Archive" class="seal">
+        <h1>THE PLEROMA ARCHIVE</h1>
+        <h3 class="curator-title">The Rt. Rev. Aaron Clews</h3>
+        <p><em>Presiding Bishop & Curator</em></p>
     </header>
 
-    <nav>
-        <a href="#welcome">Welcome</a>
-        <a href="#archive">The Archive</a>
-        <a href="#submit">Submit Work</a>
-        <a href="#curator">The Curator</a>
-    </nav>
-
     <main>
-        <section id="welcome">
-            <h2>The Canon is Not Closed</h2>
-            <p>Welcome. You have found a digital sanctuary for the modern Gnostic experience. History often suggests that the voice of the Divine fell silent two thousand years ago. We respectfully disagree.</p>
-            <p><strong>The Pleroma Archive</strong> serves as a repository for contemporary revelation, philosophical inquiry, and the "living gospels" of those who still seek the signal in the noise of the modern world. We are not a church in the brick-and-mortar sense; we are a library of the Spirit.</p>
+        <section>
+            <h2>Mission & Governance</h2>
+            <p>The Pleroma Archive is an independent, non-political library-church dedicated to the <strong>neutral stewardship</strong> and preservation of Gnostic records. Our mandate is the protection of the documentary heritage of Gnosis, ensuring that ancient and modern insights are never lost to time or institutional censorship.</p>
+            <p>We do not preach, nor do we evangelise. We exist solely to preserve and provide public access to the records of the Spark.</p>
         </section>
 
-        <section id="archive">
-            <h2>Recent Acquisitions</h2>
-
-            <div class="entry">
-                <h3>The Gospel of the Electric City</h3>
-                <span class="entry-meta">Filed under: Modern Revelations | Author: Soror A.L.</span>
-                <p>An exploration of finding the "Spark" amidst the algorithms and neon of the 21st century. This text argues that the digital realm is the new Demiurgic layer we must navigate...</p>
-                <a href="#" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">Read Full Text &rarr;</a>
-            </div>
-
-            <div class="entry">
-                <h3>Meditation on the Grey</h3>
-                <span class="entry-meta">Filed under: Philosophy | Author: Anonymous</span>
-                <p>A short treatise on why "Good vs Evil" is a false dichotomy designed to trap the soul, and how the Middle Way is the only exit.</p>
-                <a href="#" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">Read Full Text &rarr;</a>
-            </div>
-        </section>
-
-        <section id="submit" class="cta-box">
-            <h2>Contribute to the Archive</h2>
-            <p>We are seeking high-quality submissions of Gnostic philosophy, personal revelation, and poetry. We curate strictly for insight and clarity.</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">(Note: We do not accept fiction, roleplay, or "shock" content. We are looking for the signal.)</p>
-            <a href="mailto:your-email@example.com" class="button">Submit a Manuscript</a>
-        </section>
-
-        <section id="curator">
-            <h2>About the Curator</h2>
-            <p><strong>The Rev. Dr. Aaron Clews, PhD (hc)</strong></p>
-            <p>Dr. Clews is an ordained minister and metaphysical philosopher dedicated to the study of Gnosticism outside of dogmatic constraints. As the Archivist of this project, his goal is to provide a platform for the "Pneumatics" of the modern age to share their wisdom without the need for institutional approval.</p>
+        <section>
+            <h2>Library Directory</h2>
+            <table class="archival-table">
+                <thead>
+                    <tr>
+                        <th>Archive Section</th>
+                        <th>Scope</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ancient Codices</strong></td>
+                        <td>Nag Hammadi & Hermetica</td>
+                        <td><a href="/library/ancient.html">Enter Archive</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Modern Commentary</strong></td>
+                        <td>Scholarly & Philosophical Works</td>
+                        <td>Under Curation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>The Living Gnosis</strong></td>
+                        <td>User-Uploaded Preservation</td>
+                        <td><a href="/submissions.html">Submit Record</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
 
     <footer>
-        <p>"Know what is in front of your face, and what is hidden from you will be disclosed to you."</p>
-        <div class="creds">
-            &copy; 2026 The Pleroma Archive. Maintained by Dr. Aaron Clews.<br>
-            Est. Hollywood, UK.
-        </div>
+        <p><strong>Terms of Use:</strong> All user-uploaded material is preserved for public access with attribution to the contributor.</p>
+        <p><strong>Contact:</strong> curator@pleromaarchive.org</p>
     </footer>
 
 </body>
