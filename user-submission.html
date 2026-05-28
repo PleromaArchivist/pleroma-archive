@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Living Gnosis | The Pleroma Archive</title>
+<title>User Submission | The Pleroma Archive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -106,6 +106,55 @@
     font-size: 1.05rem;
   }
 
+  /* Requirements list */
+  .requirements {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .requirements li {
+    padding: 10px 0 10px 28px;
+    border-bottom: 1px solid var(--parchment-dark);
+    position: relative;
+    font-size: 1rem;
+  }
+
+  .requirements li:last-child { border-bottom: none; }
+
+  .requirements li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.7rem;
+    top: 14px;
+  }
+
+  /* Exclusions list */
+  .exclusions {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .exclusions li {
+    padding: 10px 0 10px 28px;
+    border-bottom: 1px solid var(--parchment-dark);
+    position: relative;
+    font-size: 1rem;
+    color: #5a5040;
+  }
+
+  .exclusions li:last-child { border-bottom: none; }
+
+  .exclusions li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-size: 0.85rem;
+    top: 12px;
+  }
+
   /* Text catalogue entries */
   .text-list {
     display: flex;
@@ -130,11 +179,7 @@
     margin-bottom: 4px;
   }
 
-  .text-title a {
-    color: var(--ink);
-    text-decoration: none;
-  }
-
+  .text-title a { color: var(--ink); text-decoration: none; }
   .text-title a:hover { color: var(--gold); }
 
   .text-meta {
@@ -165,27 +210,10 @@
     white-space: nowrap;
   }
 
-  .btn-read {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: transparent;
-  }
-
-  .btn-read:hover {
-    background: var(--gold);
-    color: var(--parchment);
-  }
-
-  .btn-download {
-    border-color: var(--ink);
-    color: var(--ink);
-    background: transparent;
-  }
-
-  .btn-download:hover {
-    background: var(--ink);
-    color: var(--parchment);
-  }
+  .btn-read { border-color: var(--gold); color: var(--gold); background: transparent; }
+  .btn-read:hover { background: var(--gold); color: var(--parchment); }
+  .btn-download { border-color: var(--ink); color: var(--ink); background: transparent; }
+  .btn-download:hover { background: var(--ink); color: var(--parchment); }
 
   /* Inline reader panel */
   .reader-panel {
@@ -210,12 +238,7 @@
     color: var(--gold);
   }
 
-  .reader-panel .reader-text {
-    font-size: 1rem;
-    line-height: 1.85;
-    color: var(--ink);
-  }
-
+  .reader-panel .reader-text { font-size: 1rem; line-height: 1.85; color: var(--ink); }
   .reader-panel .reader-text p { margin-bottom: 16px; }
 
   .reader-close {
@@ -232,6 +255,26 @@
   }
 
   .reader-close:hover { color: var(--red); }
+
+  /* Empty state */
+  .empty-state {
+    padding: 50px 20px;
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--parchment-dark);
+  }
+
+  .empty-state .ornament {
+    display: block;
+    color: var(--gold);
+    font-size: 1.1rem;
+    letter-spacing: 8px;
+    margin-bottom: 14px;
+    opacity: 0.4;
+    font-style: normal;
+  }
 
   /* Submit CTA */
   .submit-cta {
@@ -251,11 +294,7 @@
     margin-bottom: 12px;
   }
 
-  .submit-cta p {
-    font-size: 1rem;
-    color: #4a4035;
-    margin-bottom: 22px;
-  }
+  .submit-cta p { font-size: 1rem; color: #4a4035; margin-bottom: 22px; }
 
   .submit-btn {
     display: inline-block;
@@ -270,30 +309,7 @@
     transition: background 0.2s, color 0.2s;
   }
 
-  .submit-btn:hover {
-    background: var(--gold);
-    color: var(--parchment);
-  }
-
-  /* Empty state */
-  .empty-state {
-    padding: 60px 20px;
-    text-align: center;
-    font-style: italic;
-    color: #888;
-    font-size: 1rem;
-    border-bottom: 1px solid var(--parchment-dark);
-  }
-
-  .empty-state .ornament {
-    display: block;
-    color: var(--gold);
-    font-size: 1.1rem;
-    letter-spacing: 8px;
-    margin-bottom: 14px;
-    opacity: 0.4;
-    font-style: normal;
-  }
+  .submit-btn:hover { background: var(--gold); color: var(--parchment); }
 
   .ornament-divider {
     text-align: center;
@@ -334,62 +350,81 @@
   <nav>
     <a href="index.html">The Pleroma Archive</a>
     <span>/</span>
-    The Living Gnosis
+    User Submission
   </nav>
 
   <header>
-    <h1>The Living Gnosis</h1>
-    <p class="section-note">Community writings preserved in perpetuity. If Sophia speaks through you and you write it down, it belongs here.</p>
+    <h1>User Submission</h1>
+    <p class="section-note">An open collection of contemporary Gnostic writing, preserved in perpetuity. All accepted works are freely available for public reading and download.</p>
   </header>
 
   <section>
-    <h2>About This Collection</h2>
+    <h2>The Criterion</h2>
     <div class="mandate">
-      Gnosis did not end with Nag Hammadi. The Spark continues to speak.
+      If Sophia speaks through you and you write it down, it belongs here.
     </div>
-    <p>The Living Gnosis is an open collection of contemporary Gnostic writing — personal gospels, liturgy, sacred poetry, theological testimony, and philosophical reflection. All work is submitted by contributors who carry the Spark and reviewed by the curator before publication.</p>
-    <p>Submitted works are preserved here for unrestricted public access. Contributors retain all rights to their own writing.</p>
+    <p>The Pleroma Archive exists to ensure that Gnostic writing — ancient and modern — is never lost. This collection is open to all who carry the Spark. Submissions are reviewed by the curator before publication to ensure copyright compliance and the integrity of the archive.</p>
+    <p>Submitted works are preserved here for unrestricted public access. Contributors retain all rights to their own writing — the archive holds a copy for public access only.</p>
+  </section>
+
+  <div class="ornament-divider">— &#10022; —</div>
+
+  <section>
+    <h2>What We Accept</h2>
+    <ul class="requirements">
+      <li>Original Gnostic writing — personal gospels, cosmological essays, spiritual testimony, poetry</li>
+      <li>Theological commentary on Gnostic texts or traditions</li>
+      <li>Accounts of direct spiritual experience within a Gnostic framework</li>
+      <li>Reconstructive work on suppressed traditions — Ophite, Cathar, Bogomil, Mandaean, and related</li>
+      <li>Philosophical writing that engages seriously with Gnostic cosmology</li>
+      <li>Work may be submitted anonymously or under a chosen name</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What We Do Not Accept</h2>
+    <ul class="exclusions">
+      <li>Thelemic or OTO material — a different tradition, not preserved here</li>
+      <li>Chaos magick or general occult material without Gnostic grounding</li>
+      <li>Copyrighted material submitted without the rights holder's permission</li>
+      <li>Evangelical or proselytising content of any tradition</li>
+      <li>Content that promotes harm to persons</li>
+    </ul>
   </section>
 
   <div class="ornament-divider">— &#10022; —</div>
 
   <section>
     <h2>Liturgy &amp; Gospel</h2>
-
     <div class="empty-state">
       <span class="ornament">— &#10022; —</span>
       No works have been published yet. Be the first to submit a record.
     </div>
-
   </section>
 
   <div class="ornament-divider">— &#10022; —</div>
 
   <section>
     <h2>Theological Writing &amp; Testimony</h2>
-
     <div class="empty-state">
       <span class="ornament">— &#10022; —</span>
       No works have been published yet.
     </div>
-
   </section>
 
   <div class="ornament-divider">— &#10022; —</div>
 
   <section>
     <h2>Sacred Poetry</h2>
-
     <div class="empty-state">
       <span class="ornament">— &#10022; —</span>
       No works have been published yet.
     </div>
-
   </section>
 
   <div class="submit-cta">
     <h3>Submit a Record</h3>
-    <p>The archive is open to all who carry the Spark. Submissions are reviewed by the curator before publication.</p>
+    <p>Submissions are reviewed by the Rt. Rev. Aaron Clews, Presiding Bishop &amp; Curator, before publication.</p>
     <a href="submissions.html" class="submit-btn">Submit Your Writing</a>
   </div>
 
