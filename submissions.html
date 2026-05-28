@@ -101,7 +101,6 @@
     font-size: 1.1rem;
   }
 
-  /* Requirement list */
   .requirements {
     list-style: none;
     margin: 16px 0;
@@ -125,7 +124,6 @@
     top: 14px;
   }
 
-  /* Exclusions */
   .exclusions {
     list-style: none;
     margin: 16px 0;
@@ -150,7 +148,6 @@
     top: 12px;
   }
 
-  /* Submit CTA */
   .submit-block {
     margin-top: 44px;
     padding: 36px;
@@ -184,8 +181,6 @@
     text-transform: uppercase;
     color: var(--gold);
     text-decoration: none;
-    background: transparent;
-    cursor: pointer;
     transition: background 0.2s, color 0.2s;
   }
 
@@ -199,130 +194,6 @@
     font-size: 0.88rem;
     color: #888;
     font-style: italic;
-  }
-
-  /* Form */
-  .submission-form {
-    margin-top: 8px;
-  }
-
-  .form-field {
-    margin-bottom: 26px;
-  }
-
-  .form-field label {
-    display: block;
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .required-mark {
-    color: var(--red);
-    margin-left: 3px;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    background: rgba(240, 234, 216, 0.5);
-    border: 1px solid var(--parchment-dark);
-    padding: 10px 14px;
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 1rem;
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.2s;
-    line-height: 1.6;
-    appearance: none;
-  }
-
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  textarea:focus {
-    border-color: var(--gold);
-  }
-
-  textarea {
-    resize: vertical;
-    min-height: 280px;
-  }
-
-  .checkbox-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-top: 4px;
-  }
-
-  input[type="checkbox"] {
-    margin-top: 5px;
-    flex-shrink: 0;
-    accent-color: var(--gold);
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-  }
-
-  .checkbox-row label {
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 1rem;
-    color: var(--ink);
-    text-transform: none;
-    letter-spacing: normal;
-    line-height: 1.55;
-    margin-bottom: 0;
-  }
-
-  .form-note {
-    margin-top: 8px;
-    font-size: 0.85rem;
-    color: #888;
-    font-style: italic;
-  }
-
-  .field-error {
-    display: block;
-    margin-top: 6px;
-    font-size: 0.85rem;
-    color: var(--red);
-    font-style: italic;
-  }
-
-  [aria-invalid="true"] {
-    border-color: var(--red);
-  }
-
-  .submission-error-global {
-    margin-bottom: 20px;
-    color: var(--red);
-    font-style: italic;
-    font-size: 0.95rem;
-  }
-
-  .submission-success {
-    display: none;
-    border-left: 3px solid var(--gold);
-    padding: 24px 30px;
-    background: rgba(139,105,20,0.04);
-    margin-bottom: 30px;
-    font-style: italic;
-    font-size: 1.05rem;
-    text-align: center;
-  }
-
-  .submission-success .success-ornament {
-    display: block;
-    color: var(--gold);
-    font-size: 1.1rem;
-    letter-spacing: 8px;
-    margin-bottom: 14px;
-    opacity: 0.6;
-    font-style: normal;
   }
 
   .ornament {
@@ -352,6 +223,7 @@
   @media (max-width: 600px) {
     .page-wrapper { padding: 30px 20px; }
     h1 { font-size: 1.4rem; }
+    .submit-block { padding: 24px 20px; }
   }
 </style>
 </head>
@@ -366,7 +238,7 @@
 
   <header>
     <h1>Submit a Record</h1>
-    <p class="section-note">The Living Gnosis — an open repository for modern Gnostic writing, preserved in perpetuity.</p>
+    <p class="section-note">An open repository for modern Gnostic writing, preserved in perpetuity.</p>
   </header>
 
   <section>
@@ -374,7 +246,7 @@
     <div class="criterion">
       If Sophia speaks through you and you write it down, it belongs here.
     </div>
-    <p>The Pleroma Archive exists to ensure that Gnostic writing — ancient and modern — is never lost. The Living Gnosis section is open to all who carry the Spark. Submissions are reviewed by the curator before publication to ensure copyright compliance and the integrity of the archive.</p>
+    <p>The Pleroma Archive exists to ensure that Gnostic writing — ancient and modern — is never lost. This collection is open to all who carry the Spark. Submissions are reviewed by the curator before publication to ensure copyright compliance and the integrity of the archive.</p>
   </section>
 
   <div class="ornament">— ✦ —</div>
@@ -404,79 +276,28 @@
 
   <section>
     <h2>How to Submit</h2>
-    <p>Complete the form below. The curator will review your submission and respond by email. Accepted works are published to the archive with your attribution. You retain all rights to your own work — the archive preserves a copy for public access only.</p>
+    <p>Send your submission by email. Include the following:</p>
+    <ul class="requirements">
+      <li>Your text as a plain text (.txt) or document (.docx, .pdf) attachment</li>
+      <li>The name or pseudonym you wish attributed in the archive</li>
+      <li>A brief note on the nature of the work (one or two sentences is sufficient)</li>
+      <li>Confirmation that the work is your own original writing and free of copyright restrictions</li>
+    </ul>
+    <p>The curator will review your submission and respond. Accepted works are published to the archive with your attribution. You retain all rights to your own work — the archive preserves a copy for public access only.</p>
   </section>
 
-  <div data-fs-success class="submission-success">
-    <span class="success-ornament">— ✦ —</span>
-    Your record has been received. The curator will review your submission and respond by email.
+  <div class="submit-block">
+    <h3>Send Your Record</h3>
+    <p>Submissions are reviewed by the Rt. Rev. Aaron Clews, Presiding Bishop &amp; Curator, before publication.</p>
+    <a href="mailto:pleromaarchive@gmail.com?subject=Archive%20Submission" class="submit-btn">Send by Email</a>
+    <p class="email-note">pleromaarchive@gmail.com</p>
   </div>
 
-  <div data-fs-error class="submission-error-global"></div>
-
-  <form id="submission-form" action="https://formspree.io/f/mdajbogn" method="POST" class="submission-form">
-    <input type="hidden" name="_subject" value="Archive Submission — The Pleroma Archive">
-
-    <div class="form-field">
-      <label for="name">Name or Pseudonym <span class="required-mark">*</span></label>
-      <input type="text" id="name" name="name" required placeholder="The name you wish attributed in the archive" data-fs-field>
-      <span data-fs-error="name" class="field-error"></span>
-    </div>
-
-    <div class="form-field">
-      <label for="email">Email Address <span class="required-mark">*</span></label>
-      <input type="email" id="email" name="email" required placeholder="For the curator to reply to you" data-fs-field>
-      <span data-fs-error="email" class="field-error"></span>
-    </div>
-
-    <div class="form-field">
-      <label for="nature">Nature of the Work <span class="required-mark">*</span></label>
-      <input type="text" id="nature" name="nature" required placeholder="e.g. &ldquo;A personal gospel in the Valentinian tradition&rdquo;" data-fs-field>
-      <span data-fs-error="nature" class="field-error"></span>
-    </div>
-
-    <div class="form-field">
-      <label for="submission">Submission Text <span class="required-mark">*</span></label>
-      <textarea id="submission" name="submission" required placeholder="Paste your text here. Plain text is preferred for faithful preservation." data-fs-field></textarea>
-      <span data-fs-error="submission" class="field-error"></span>
-      <p class="form-note">For very long works, paste as much as will fit and note the remainder in your text. The curator will follow up by email.</p>
-    </div>
-
-    <div class="form-field">
-      <div class="checkbox-row">
-        <input type="checkbox" id="copyright" name="copyright" value="Confirmed" required data-fs-field>
-        <label for="copyright">I confirm this is my own original writing and is free of copyright restrictions. I retain all rights to my work — the archive preserves a copy for public access only.</label>
-      </div>
-      <span data-fs-error="copyright" class="field-error"></span>
-    </div>
-
-    <div style="text-align: center; margin-top: 36px;">
-      <button type="submit" class="submit-btn" data-fs-submit-btn>Submit Record</button>
-      <p class="email-note" style="margin-top: 16px;">Reviewed by the Rt. Rev. Aaron Clews, Presiding Bishop &amp; Curator, before publication.</p>
-    </div>
-  </form>
-
   <footer>
-    <span><a href="index.html">← Return to Archive</a></span>
+    <span><a href="index.html">&#8592; Return to Archive</a></span>
     <span>All submitted material preserved for public access with attribution.</span>
   </footer>
 
 </div>
-
-<script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#submission-form', formId: 'mdajbogn' });
-
-  var successEl = document.querySelector('[data-fs-success]');
-  var formEl = document.getElementById('submission-form');
-  if (successEl && formEl) {
-    new MutationObserver(function () {
-      if (successEl.style.display !== 'none' && successEl.style.display !== '') {
-        formEl.style.display = 'none';
-      }
-    }).observe(successEl, { attributes: true, attributeFilter: ['style'] });
-  }
-</script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
