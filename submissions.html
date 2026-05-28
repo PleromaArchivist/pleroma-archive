@@ -305,6 +305,7 @@
   }
 
   .submission-success {
+    display: none;
     border-left: 3px solid var(--gold);
     padding: 24px 30px;
     background: rgba(139,105,20,0.04);
@@ -322,10 +323,6 @@
     margin-bottom: 14px;
     opacity: 0.6;
     font-style: normal;
-  }
-
-  [data-fs-success]:not(:empty) ~ #submission-form {
-    display: none;
   }
 
   .ornament {
@@ -469,6 +466,16 @@
 <script>
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
   formspree('initForm', { formElement: '#submission-form', formId: 'mdajbogn' });
+
+  var successEl = document.querySelector('[data-fs-success]');
+  var formEl = document.getElementById('submission-form');
+  if (successEl && formEl) {
+    new MutationObserver(function () {
+      if (successEl.style.display !== 'none' && successEl.style.display !== '') {
+        formEl.style.display = 'none';
+      }
+    }).observe(successEl, { attributes: true, attributeFilter: ['style'] });
+  }
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
